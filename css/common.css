@@ -1,0 +1,107 @@
+:root{
+  --color-red:#cf0a2c;
+}
+
+
+
+body{
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    min-width: 1260px;
+    color: #1f1f1f;
+    background: #f6f4f2;
+    overflow:auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+  }
+  
+  .sub-title{
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 200;
+    margin: 50px 0;
+  }
+  
+  .title{
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
+    /* opacity: 0.7; */
+  }
+
+  .title span{display: block;}
+
+  .title em{font-weight: 500;}
+
+  em{font-style: italic;margin-right: 15px;}
+
+  .desc{
+    opacity: 0.8;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 2;
+    /* letter-spacing: 0.034vw; */
+    /* font-family: 'Aktiv Grotesk'; */
+  }
+
+
+  /* //// */
+
+  
+  .img-rolling{
+    overflow: hidden;
+  }
+  .img-rolling img{
+    height: 120%;
+  }
+
+
+  /* 링크 css */
+
+  .link-more{
+    height: 30px;
+    color: #cb9274;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: 'Aktiv Grotesk';
+    position: relative;
+    margin-top: 60px;
+    display: inline-block;
+    text-transform: uppercase;    
+}
+
+.link-name{
+    display: inline-block;
+    transform: translateX(0px);
+    transition: 0.3s ease;
+}
+
+.link-more:hover .link-name{
+    transform: translateX(-20px);
+}
+
+.link-more:hover::before{
+    transform: rotate(45deg) translate(90px,-90px);
+}
+
+.link-more::before{
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid#cb9274;
+    border-right: 1px solid#cb9274;
+    transform: rotate(45deg) translate(0);
+    margin-right: 10px;
+    transition: 0.3s ease;
+}

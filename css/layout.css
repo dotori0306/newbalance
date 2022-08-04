@@ -1,0 +1,364 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url(./reset.css);
+@import url(./common.css);
+
+
+header{
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 10;
+    width: 100%;height: 72px;
+    min-width: 1250px;
+    background: #fff;
+    /* backdrop-filter: blur(30px); */
+    border-bottom: 2px solid #fff;
+    /* transition: 0.5s; */
+    opacity: 0;
+}
+
+.header.bg{
+   background: none;
+   border-bottom: none;
+}
+
+.header::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    /* backdrop-filter: blur(30px); */
+    /* transition: 0.3s; */
+}
+
+.header.on::before{
+    height: 400px;
+}
+
+.header .logo-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 55px;    
+    position: relative;
+    height: 100%;
+}
+
+.header .logo{
+    background: url(https://image.nbkorea.com/NBRB_PC/common/logo_60x29.png) no-repeat center;
+    width: 60px;
+    height: 29px;
+    left: 50px;
+}
+
+.header .logo a{display: block;height: 100%;}
+
+.header .menu-area{
+    margin-right: auto;
+    margin-left: 50px;
+    height: 100%;
+}
+
+.header .menu-wrap{
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.header .menu-item{
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #fff;
+}
+
+.header .menu-item:hover{
+    border-bottom: 2px solid #cf0a2c;
+}
+
+.header .menu-item > a{
+    line-height: 72px;
+}
+
+.header .sub-menu{
+    display: none;
+    position: absolute;
+    top: 70px;left: 0;
+    padding: 20px 55px;
+    box-sizing: border-box;
+}
+
+.header .sub-menu-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .sub-menu-item{
+    width: 160px;
+    position: relative;
+    min-height: 350px;
+    margin-right: 40px;
+}
+
+.header .sub-menu-item:first-child{
+    border-right: 1px solid #e3e3e3;
+}
+.header .sub-menu-item.underwear{
+    border-right: 1px solid #e3e3e3;
+}
+.header .sub-menu-item.goods{
+    border-right: 1px solid #e3e3e3;
+}
+
+.header .sub-menu-item .category{
+    margin-bottom: 20px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header .sub-item{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 13px;
+}
+
+.header .sub-item a:hover{
+    border-bottom: 1px solid #000;
+}
+
+.header .event{
+    color: var(--color-red);
+    font-weight: 600;
+}
+
+.header .link-menu{
+    position: absolute;
+    right: 55px;
+    width: 40px;
+    display: block;
+}
+
+.header .link-menu span{
+    height: 1px;
+    width: 100%;
+    display: block;
+    position: relative;
+    background-color: #1f1f1f;
+}
+
+.header .link-menu span:nth-child(3){margin: 0.5vw 0;}
+
+.header .side-menu{
+    position: fixed;
+    top: -100%;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    z-index: 10;
+    overflow: auto;
+    transition: 0.3s;
+    background: #fff;
+    transition: ease-in-out 0.8s 0.1s;
+}
+
+.header .side-menu.on{
+    top: 0;
+}
+
+.header .side-wrap{
+    padding: 80px 150px;
+}
+
+.header .side-top{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header .side-top .side-logo{
+    display: block;
+    background: url(../img/nb-logo.png) no-repeat center/contain;
+    width: 170px;height: 29px;
+}
+
+.header .side-top .side-logo::after{
+    content: '';
+    position: absolute;
+    height: 20px;width: 3px;
+    background: #373737;
+    right: 0;top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.header .side-top .side-logo::before{
+    content: '';
+    position: absolute;
+    height: 20px;width: 3px;
+    background: #373737;
+    right: 0;top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.header .side-list{
+    padding: 18px 0 11px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .side-item>a{
+    line-height: 65px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.header .side-sub-item{
+    font-size: 15px;
+    opacity: 0.8;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.header .side-item:not(.nosub)>a{
+    position: relative;
+    width: 100%;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .side-item:not(.nosub)>a::after{
+    content: '';
+    border-style: solid;
+    border-color: #373737;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+    width: 8px;height: 8px;
+    transition: 0.3s
+}
+
+.header .side-item:not(.nosub)>a.on::after{
+    transform: rotate(-135deg);
+}
+
+.header .side-sub-wrap{
+    display: none;
+}
+
+.header .board-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.header .board-list a{
+    margin-bottom: 20px;
+}
+
+.header .side-video{
+    position: fixed;
+    left: 0;top: -100%;
+    width: 35%;
+    height: 100%;
+    transition: ease-in-out 0.8s 0s;
+}
+
+.header .side-video.on{
+    top: 0;
+}
+
+.header .side-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////// */
+
+footer{
+    color: #fff;
+    overflow: hidden;
+    background: #1f1f1f;
+    font-size: 15px;
+}
+
+.f-inner{
+    margin: 90px 200px;
+}
+
+footer h3{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer .corp-area{  
+   position: relative;
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+}
+
+footer .logo-area{
+    width: 150px;height: 150px;
+    background: url(../img/logo_2.png) no-repeat center/cover;
+    /* margin-right: 150px; */
+}
+
+footer .corp-wrap{
+    display: flex;
+    position: relative;
+}
+
+footer .corp-wrap > div{
+    width: 245px;
+}
+
+footer .corp-list{
+    width: 200px;
+    font-weight: normal;
+    line-height: 2;
+    font-family: 'Aktiv Grotesk';
+    margin-bottom: 100px;
+}
+
+footer .corp-item a{
+    opacity: 0.5;
+}
+footer .corp-item a:hover{
+    opacity: 1;
+}
+
+
+
+footer .badge-logo img:first-child{position: relative;}
+footer .badge-logo img:last-child{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+
+footer .copyright-area{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: #595858;
+    font-size: 12px;
+    justify-content: flex-start;
+}
+
+footer .copyright-area p{margin-right: 50px;}
+footer .copyright-area a:last-child{margin-left: 50px;}
+footer .copyright-area a{transition: 0.3s;}
+footer .copyright-area a:hover{color: #fff;}
