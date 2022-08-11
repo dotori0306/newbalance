@@ -8,7 +8,6 @@ $(function(){
   tl = gsap.timeline({
     defaults:{
       duration:1,
-
     }
   })
 
